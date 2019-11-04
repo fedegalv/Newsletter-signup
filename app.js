@@ -37,7 +37,7 @@ app.post("/", function(req, res){
      headers: {
        "Authorization": "fedegv 779f7a65bd8411a156a8ebb0732acf66-us5"
      },
-     //body: jsonData
+     body: jsonData
   };
   request(options, function(error, response, body){
     if (error) {
@@ -66,8 +66,8 @@ app.post("/failure", function(req, res){
 
 
 
-app.listen(3000, function(){
-  console.log("Server is running on port 3000");
+app.listen(process.env.PORT || 3000 , function(){
+  console.log("Server is running.");
 });
 
 
